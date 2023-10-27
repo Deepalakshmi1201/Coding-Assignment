@@ -1,0 +1,63 @@
+<!-- Create a survey form with Fields; First Name, Last Name, Date of Birth, Country (dropdown), 
+Gender (checkbox), Profession, email, and mobile number. All the input fields are 
+necessary to submit the form. Create two buttons Submit and Reset. Reset will reset the 
+form while clicking on submit, first, it will check all the fields and necessary validations and 
+then a popup will appear displaying all the selected values with the label in front of it. On 
+closing the popup, the form should reset all the values. Use the following for reference -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Form.css">
+    <script rel="Form.js" ></script>
+    <title>Survey Form</title>
+</head>
+<body>
+    <h1>Survey Form</h1>
+    <form id="surveyForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required><br>
+
+        <label for="country">Country:</label>
+        <select id="country" required>
+            <option value="" disabled selected>Select your country</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <!-- Add more countries here -->
+        </select><br>
+
+        <label>Gender:</label><br>
+        <label for="male">Male</label>
+        <input type="checkbox" id="male">
+        <label for="female">Female</label>
+        <input type="checkbox" id="female"><br>
+
+        <label for="profession">Profession:</label>
+        <input type="text" id="profession" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" required><br>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+    </form>
+
+    <div id="popup">
+        <h2>Survey Results</h2>
+        <div id="results"></div>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script src="SurveyForm.js"></script>
+</body>
+</html>
